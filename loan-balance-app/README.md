@@ -75,8 +75,11 @@ To get the loan assignment, we will need to trace back the dynamic programming s
 6. Discuss your solution’s runtime complexity.
 
 Time complexity:
+
 Preprocessing done once:
+
 The preprocessing procedure for the covenants is O(c*f) where c = # covenants and f= # facilities. 
+
 The preprocessing procedure for the facilities is O(flogf) for sorting
 
 Loan processing:
