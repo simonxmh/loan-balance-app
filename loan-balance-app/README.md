@@ -19,6 +19,7 @@
 
 4. Your solution most likely simulates the streaming process by directly calling a method in your code to process the loans inside of a for loop. What would a REST API look like for this same service? Stakeholders using the API will need, at a minimum, to be able to request a loan be assigned to a facility, and read the funding status of a loan, as well as query the capacities remaining in facilities.
 
+```
   POST /loans
   -d {
     interest_rate: <float>
@@ -53,7 +54,7 @@
     interest_rate: <float>
     bank_id <int>
   }
-
+```
 
 5. How might you improve your assignment algorithm if you were permitted to assign loans in batch rather than streaming? We are not looking for code here, but pseudo code or description of a revised algorithm appreciated.
 
@@ -61,10 +62,11 @@ If the assignments were done in batch. We can assign loans with knowledge of fut
 
 I would use an dynamic programming algorithm that maximizes the yields. I would use a table to store the yields, with the recurrence formula:
 
-
+```
 total_yield(l,n) = max( total_yield(l-1,n-1) + calculate_yields[n], # current facility selected for the loan l
                       total_yield(l-1,n-1), # current facility not selected for the loan
 )
+```
 
 where n is a qualified facility, and l is loan id
 
